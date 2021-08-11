@@ -24,11 +24,11 @@ public class UserController {
 	@Autowired
 	private UserService user_Service;
 
-	// index濡� �씠�룞
+	// index로 이동
 	@RequestMapping(value = "/index")
 	public ModelAndView index() {
 
-		System.out.println("泥섏쓬 �떆�옉 index text");
+		System.out.println("처음 시작 index text");
 		ModelAndView mav = new ModelAndView("/index");
 
 //		ArrayList<Product> list = (ArrayList<Product>) product_Service.selectProductAll();
@@ -40,19 +40,19 @@ public class UserController {
 //		String path = "";
 //
 //		try {
-//			// 泥� 硫붿씤�럹�씠�젣 �긽�뭹 4媛쒕쭔 媛��졇�삩�떎
+//			// 첫 메인페이제 상품 4개만 가져온다
 //			System.out.println("list.size : " + list.size());
 //			for (int i = 0; i < 4; i++) {
-//				System.out.println("諛섎났臾� i : " + i);
-//				// �쟾泥� �긽�뭹�닔媛� 4媛� 誘몃쭔�씪 �븣
+//				System.out.println("반복문 i : " + i);
+//				// 전체 상품수가 4개 미만일 때
 //				if (list.size() < 4) {
-//					// 留덉�留� �긽�뭹�쑝濡� 梨꾩슫�떎
+//					// 마지막 상품으로 채운다
 //					if (i < list.size()) {
 //						p = list.get(i);
-//						System.out.println("諛섎났臾� if list.get(i) : " + i + " " + p);
+//						System.out.println("반복문 if list.get(i) : " + i + " " + p);
 //					} else {
 //						p = list.get(list.size() - 1);
-//						System.out.println("諛섎났臾� else list.get(i) : " + i + " " + p);
+//						System.out.println("반복문 else list.get(i) : " + i + " " + p);
 //					}
 //					path = basePath + p.getProduct_num() + "\\";
 //					File imgDir = new File(path);
@@ -62,7 +62,7 @@ public class UserController {
 //						fileList.add(files[0]);
 //					}
 //					indexList.add(p);
-//					System.out.println("if臾� p = " + p);
+//					System.out.println("if문 p = " + p);
 //				} else {
 //					p = list.get(i);
 //					path = basePath + p.getProduct_num() + "\\";
@@ -74,7 +74,7 @@ public class UserController {
 //					}
 //					System.out.println("p = " + p);
 //					indexList.add(p);
-//					System.out.println("indexList�뿉 add �꽦怨�" + i + "踰덉��");
+//					System.out.println("indexList에 add 성공" + i + "번쨰");
 //				}
 //			}
 //			System.out.println(indexList);
@@ -88,34 +88,34 @@ public class UserController {
 		return mav;
 	}
 
-	// loginForm�쑝濡� �씠�룞
+	// loginForm으로 이동
 	@GetMapping(value = "/user/login")
 	public void login() {
 
 	}
 
-	// registerAgree濡� �씠�룞
-	@RequestMapping(value = "/user/registerAgree")
-	public void registerAgree() {
+	// signup_agree로 이동
+	@RequestMapping(value = "/user/signup_agree")
+	public void signup_agree() {
 
 	}
 
-	// registerForm濡� �씠�룞
-	@RequestMapping(value = "/user/registerForm")
-	public void registerForm() {
+	// signupform로 이동
+	@RequestMapping(value = "/user/signupForm")
+	public void signupForm() {
 
 	}
 
-	// find_pwdForm�쑝濡� �씠�룞
+	// find_pwdForm으로 이동
 	@RequestMapping(value = "/user/find_pwd")
-	public void findPwForm() {
+	public void findPwdForm() {
 
 	}
 
-	// ==================== �뼯 Page Control �뼯 ====================
+	// ==================== ▲ Page Control ▲ ====================
 
-	// �쉶�썝媛��엯 Service �떎�뻾 �썑 濡쒓렇�씤 �럹�씠吏�濡� �씠�룞
-	@RequestMapping(value = "/user/register")
+	// 회원가입 Service 실행 후 로그인 페이지로 이동
+	@RequestMapping(value = "/user/signup")
 	public String join(User u) {
 
 		user_Service.addUser(u);
@@ -123,7 +123,7 @@ public class UserController {
 		return "redirect:/user/login";
 	}
 
-	// 濡쒓렇�씤 �썑 硫붿씤�럹�씠吏�濡� �씠�룞
+	// 로그인 후 메인페이지로 이동
 	@RequestMapping(value = "/user/login")
 	public String loginOk(HttpServletRequest request, @RequestParam(value = "user_id") String user_id) {
 
@@ -142,7 +142,7 @@ public class UserController {
 		return null;
 	}
 
-	// �쉶�썝寃��깋�븯�뿬 �닔�젙李쎌쓣 �쓣�슦�뒗 硫붿냼�뱶
+	// 회원검색하여 수정창을 띄우는 메소드
 	@RequestMapping(value = "/user/userEdit")
 	public ModelAndView userEdit(HttpServletRequest request) {
 
@@ -156,7 +156,7 @@ public class UserController {
 		return mav;
 	}
 
-	// �쉶�썝�젙蹂� �닔�젙�쓣 �떎�뻾�븯�뒗 硫붿냼�뱶
+	// 회원정보 수정을 실행하는 메소드
 	@RequestMapping(value = "user/edit")
 	public String edit(HttpServletRequest request, RedirectAttributes redirect, User u,
 						@RequestParam(value = "user_id") String user_id) {
@@ -171,7 +171,7 @@ public class UserController {
 		return "redirect:/user/userProfile";
 	}
 
-	// 濡쒓렇�븘�썐 �썑 硫붿씤�럹�씠吏�濡� �씠�룞
+	// 로그아웃 후 메인페이지로 이동
 	@RequestMapping(value = "/user/logout")
 	public String logout(HttpServletRequest request) {
 
@@ -182,7 +182,7 @@ public class UserController {
 		return "redirect:/index";
 	}
 
-	// �쉶�썝 �깉�눜瑜� �떎�뻾�븯�뒗 硫붿냼�뱶
+	// 회원 탈퇴를 실행하는 메소드
 	@RequestMapping(value = "/user/userDelete")
 	public String userDelete(HttpServletRequest request) {
 
@@ -196,7 +196,7 @@ public class UserController {
 		return "redirect:/index";
 	}
 
-	// �븘�씠�뵒 以묐났 寃��궗
+	// 아이디 중복 검사
 	@RequestMapping(value = "/user/IdCheck")
 	@ResponseBody
 	public String checkId(@RequestParam(value = "user_id") String user_id) {
@@ -204,13 +204,13 @@ public class UserController {
 		int id_result = user_Service.idCheck(user_id);
 		
 		if (id_result != 0) {
-			return "fail"; // 以묐났�맆 �븣
+			return "fail"; // 중복될 때
 		} else {
-			return "success"; // 以묐났�릺吏� �븡�쓣 �븣
+			return "success"; // 중복되지 않을 때
 		}
 	}
 
-	// �땳�꽕�엫 以묐났 寃��궗
+	// 닉네임 중복 검사
 	@RequestMapping(value = "/user/nicknameCheck")
 	@ResponseBody
 	public String checkName(@RequestParam(value = "user_nickname") String user_nickname) {
@@ -224,7 +224,7 @@ public class UserController {
 		}
 	}
 
-	// �씠硫붿씪 以묐났 寃��궗
+	// 이메일 중복 검사
 	@RequestMapping(value = "/user/emailCheck")
 	@ResponseBody
 	public String checkEmail(@RequestParam(value = "user_email") String user_email) {
@@ -238,35 +238,35 @@ public class UserController {
 		}
 	}
 
-	// �엫�떆 鍮꾨�踰덊샇李얘린
-	@RequestMapping(value = "/user/pwCheck")
-	public ModelAndView findPw(@RequestParam(value = "user_email") String user_email) {
+	// 임시 비밀번호찾기
+	@RequestMapping(value = "/user/pwdCheck")
+	public ModelAndView findPwd(@RequestParam(value = "user_email") String user_email) {
 		
-		ModelAndView mav = new ModelAndView("/user/pwCheck");
+		ModelAndView mav = new ModelAndView("/user/pwdCheck");
 		String result = "";
 		User u = user_Service.selectUserEmail(user_email);
 
 		if (u == null) {
-			result = "�쑀�슚�븯吏��븡�� �씠硫붿씪";
+			result = "유효하지않은 이메일";
 		} else {
-			result = u.getUser_nickname() + " �떂�쓽 鍮꾨�踰덊샇�뒗 " + u.getUser_pwd() + " �엯�땲�떎.";
+			result = u.getUser_nickname() + " 님의 비밀번호는 " + u.getUser_pwd() + " 입니다.";
 		}
 		mav.addObject("result", result);
 
 		return mav;
 	}
 	
-	// 濡쒓렇�씤 �떆 �븘�씠�뵒 & 鍮꾨�踰덊샇 泥댄겕
+	// 로그인 시 아이디 & 비밀번호 체크
 	@RequestMapping(value = "/user/userLoginCheck")
-	public ModelAndView loginCheck(@RequestParam(value = "user_id") String user_id, @RequestParam(value = "user_pw") String user_pw) {
+	public ModelAndView loginCheck(@RequestParam(value = "user_id") String user_id, @RequestParam(value = "user_pwd") String user_pwd) {
 		
 		ModelAndView mav = new ModelAndView("user/userLoginCheckJSON");
 		User u = user_Service.checkUserId(user_id);
 		String pwd2 = u.getUser_pwd();
 		String result = "";
 		
-		if (!user_pw.equals(pwd2)) {
-			result = "鍮꾨�踰덊샇媛� 留욎� �븡�뒿�땲�떎";
+		if (!user_pwd.equals(pwd2)) {
+			result = "비밀번호가 맞지 않습니다";
 			mav.addObject("result", result);
 		} else {
 			mav.addObject("result", result);

@@ -18,17 +18,17 @@
     
     
 	<div class="container">
-		<div class="find_pw_container">
-			<div class="find_pw_area">
+		<div class="find_pwd_container">
+			<div class="find_pwd_area">
 				<p> 비밀번호 찾기 </p>
 			</div>
 			
-			<div class="find_pw_input_area">
+			<div class="find_pwd_input_area">
 				<input type="text" name="user_email" class="user_email" id="user_email" placeholder="이메일을 입력해주세요" />
 			</div>
 			
-			<div class="find_pw_btn_area">
-				<input type="button" name="find_pw_btn" class="find_pw_btn" id="find_pw_btn" value="임시비밀번호 발급" />
+			<div class="find_pwd_btn_area">
+				<input type="button" name="find_pwd_btn" class="find_pwd_btn" id="find_pwd_btn" value="임시비밀번호 발급" />
 			</div>
 		</div>
 	</div>

@@ -18,10 +18,10 @@
 				var user_id = $(".user_id").val();
 				var user_pwd = $(".user_pwd").val();
 
-				if (user_id == "" && user_pw == "") {
+				if (user_id == "" && user_pwd == "") {
 					alert("아이디와 비밀번호를 입력해주세요");
 					return false;
-				} else if (user_pw == "") {
+				} else if (user_pwd == "") {
 					alert("비밀번호를 입력해주세요");
 					return false;
 				} else if (user_id == "") {
@@ -31,7 +31,7 @@
 
 				$.post("/user/userLoginCheck", {
 					user_id : user_id,
-					user_pw : user_pw
+					user_pwd : user_pwd
 				})
 				.done(function(data) {
 					var data = eval("(" + data + ")");
@@ -67,8 +67,8 @@
                     <input type="text" class="user_id" id="user_id" name="user_id" placeholder="아이디를 입력하세요" />
                 </div>
 
-                <div class="pw_area">
-                    <input type="password" class="user_pw" id="user_pw" name="user_pw" placeholder="비밀번호를 입력하세요" />
+                <div class="pwd_area">
+                    <input type="password" class="user_pwd" id="user_pwd" name="user_pwd" placeholder="비밀번호를 입력하세요" />
                 </div>
 
                 <div class="login">
@@ -76,12 +76,12 @@
                 </div>
 			</form>
 			
-            <div class="register_area">
+            <div class="signup_area">
             	<span>
-                	<a class="register" href="${pageContext.request.contextPath }/user/registerAgree">회원가입</a>
+                	<a class="signup" href="${pageContext.request.contextPath }/user/signup_agree">회원가입</a>
                	</span>
                 <span>
-                    <a class="find_pw" href="${pageContext.request.contextPath }/user/find_pw"> 비밀번호 찾기</a>
+                    <a class="find_pwd" href="${pageContext.request.contextPath }/user/find_pwd"> 비밀번호 찾기</a>
                 </span>
             </div>
         </div>

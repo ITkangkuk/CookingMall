@@ -5,7 +5,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>My JSP Page</title>
+	<title>JSP</title>
 	
 	<!-- Jquery -->
 	<script src="http://code.jquery.com/jquery.min.js"></script>
@@ -42,7 +42,7 @@
 <body>
 
 	<div class="container">
-        <div class="register_form">
+        <div class="signup_form">
             <h1> 정보수정 </h1>
         </div>
         
@@ -62,21 +62,21 @@
             <div class="form-group">
                 <label for='"password"' class="col-md-6">  * 비밀번호</label>
                 <div class="col-md-15">
-                    <input type="password" name="user_pwd" class="form-control" value="${u.user_pw }" required/>
+                    <input type="password" name="user_pwd" class="form-control" value="${user.user_pwd }" required/>
                 </div>
             </div>
     
             <div class="form-group">
                 <label for='name' class="col-md-6"> * 이름 </label>
                 <div class="col-md-15">
-                    <input type="text" name="user_name" class="form-control" value="${u.user_name }" required/>
+                    <input type="text" name="user_name" class="form-control" value="${user.user_name }" required/>
                 </div>
             </div>
             
             <div class="form-group">
 				<label for='nickname' class="id_form col-md-6"> * 닉네임 </label>
 				<div class="col-md-15">
-					<input type="text" name="user_nickname" class="form-control" value="${u.user_nickname }" required />
+					<input type="text" name="user_nickname" class="form-control" value="${user.user_nickname }" required />
 
 					<input type="button" id="nickCheck" value="닉네임 중복체크">
 					<div id="nickResult"></div> <br />
@@ -86,21 +86,21 @@
             <div class="form-group">
                 <label for='email' class="col-md-6"> * 이메일</label>
                 <div class="col-md-15">
-                    <input type="email" name="user_email" class="form-control" value="${u.user_email }" placeholder="ex) honggildong@naver.com" required/>
+                    <input type="email" name="user_email" class="form-control" value="${user.user_email }" placeholder="ex) honggildong@naver.com" required/>
                 </div>
             </div>
     
             <div class="form-group">
                 <label for='tel' class="col-md-6"> * 연락처 </label>
                 <div class="col-md-15">
-                    <input type="tel" name="user_tel" class="form-control" value="${u.user_tel }" placeholder="'-'없이 입력" required/>
+                    <input type="tel" name="user_tel" class="form-control" value="${user.user_tel }" placeholder="'-'없이 입력" required/>
                 </div>
             </div>
 
             <div class="form-group">
                 <label for="birthday" class="col-md-6"> * 생년월일 </label>
                 <div class="col-md-15">
-                    <input type="date" name="user_birthday" class="form-control" value="${u.user_birthday }" required/>
+                    <input type="date" name="user_birthday" class="form-control" value="${user.user_birthday }" required/>
                 </div>
             </div>
     
@@ -108,7 +108,7 @@
             <div class="form-group">
                 <label for='postcode'> &nbsp;&nbsp; * 우편번호</label>
                 <div class="col-md-15 clearfix" id="post_container">
-                    <input type="text" name="user_postcode" class="form-control pull-left" value="${u.user_postcode }" style='width: 30rem; margin-right: 5px'/>
+                    <input type="text" name="user_postcode" class="form-control pull-left" value="${user.user_postcode }" style='width: 30rem; margin-right: 5px'/>
                     <!-- 클릭 시, Javascript 함수 호출 : openDaumPostcode() -->
                     <input type='button' value='우편번호 찾기' class='btn btn-warning' id="btn1" onclick='execDaumPostcode("postcode", "addr1", "addr2")' required/>
                 </div>
@@ -117,14 +117,14 @@
             <div class="form-group">
                 <label for='addr1' class="col-md-6"> * 주소</label>
                 <div class="col-md-15">
-                    <input type="text" name="user_addr1" class="form-control" value="${u.user_addr1 }" required/>
+                    <input type="text" name="user_addr1" class="form-control" value="${user.user_addr1 }" required/>
                 </div>
             </div>
     
             <div class="form-group">
                 <label for='addr2' class="col-md-6"> * 상세주소</label>
                 <div class="col-md-15">
-                    <input type="text" name="user_addr2" class="form-control" value="${u.user_addr2 }" required/>
+                    <input type="text" name="user_addr2" class="form-control" value="${user.user_addr2 }" required/>
                 </div>
             </div>
     

@@ -29,11 +29,11 @@
 
 			<!-- 유저 닉네임 & ID 영역 -->
 			<div class="user_id_nick_area">
-				<div>${u.user_nickname }</div>
-				<div>&nbsp;(${u.user_id })</div>
+				<div>${user.user_nickname }</div>
+				<div>&nbsp;(${user.user_id })</div>
 			</div>
 			
-			<c:if test="${sessionScope.user_id == u.user_id }">
+			<c:if test="${sessionScope.user_id == user.user_id }">
 						<a href="${pageContext.request.contextPath }/user/userEdit"> 
 							<input type="button" class="editbtn" value="정보수정" />
 						</a>

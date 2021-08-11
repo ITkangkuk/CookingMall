@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 
 <!-- CSS -->
-	<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/user/registerForm(css).css">
+	<link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/user/signupForm(css).css">
 <link rel="stylesheet" href="${pageContext.request.contextPath }/assets/css/inc/footer.css">
 	
 	<!-- Bootstrap -->
@@ -22,7 +22,7 @@
 	<script src="${pageContext.request.contextPath }/assets/js/daumPostCode.js"></script>
 	
 	<!-- JavaScript -->
-	<script src="${pageContext.request.contextPath }/assets/js/user/registerForm.js"></script>
+	<script src="${pageContext.request.contextPath }/assets/js/user/signupForm.js"></script>
 	
 	<script type="text/javascript">
 	    $(document).ready(function() {
@@ -38,14 +38,14 @@
 <!-- 회원가입 양식 시작 -->
 
 <div class="container">
-        <div class="register_form">
+        <div class="signup_form">
             <h1> 회원가입 </h1>
         </div>
         
         <br /><br />
         
         <!--회원가입폼 시작-->
-        <form method="post" class="form-horizontal" action="${pageContext.request.contextPath }/user/register">
+        <form method="post" class="form-horizontal" action="${pageContext.request.contextPath }/user/signup">
             <!-- 아이디 -->
             <div class="form-group">
                 <label for='userid' class="id_form col-md-6"> * 아이디 </label>
