@@ -19,13 +19,13 @@
 				var user_pwd = $(".user_pwd").val();
 
 				if (user_id == "" && user_pw == "") {
-					alert("¾ÆÀÌµğ¿Í ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					alert("ì•„ì´ë””ì™€ ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					return false;
 				} else if (user_pw == "") {
-					alert("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					alert("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					return false;
 				} else if (user_id == "") {
-					alert("¾ÆÀÌµğ¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+					alert("ì•„ì´ë””ë¥¼ ì…ë ¥í•´ì£¼ì„¸ìš”");
 					return false;
 				}
 
@@ -36,8 +36,8 @@
 				.done(function(data) {
 					var data = eval("(" + data + ")");
 					
-					if (data.result == "Æ²¸° ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù") {
-						alert("Æ²¸° ºñ¹Ğ¹øÈ£ÀÔ´Ï´Ù");
+					if (data.result == "í‹€ë¦° ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤") {
+						alert("í‹€ë¦° ë¹„ë°€ë²ˆí˜¸ì…ë‹ˆë‹¤");
 						return false;
 					} 
 					else {
@@ -51,11 +51,12 @@
 
 </head>
 <body>
-
+//ë°”ë””ì— ì–´ë– í•œ ë³€í™”ë¥¼ ì£¼ì–´ ë³€ê²½ë˜ë‚˜ ì‹¤í–‰
+	
 <div class="container">
         <div class="logo_container">
             <a href="${pageContext.request.contextPath }/index">
-            <!-- ·Î°íÀÌ¹ÌÁö°æ·Î -->
+            <!-- ë¡œê³ ì´ë¯¸ì§€ê²½ë¡œ -->
                 <img src="${pageContext.request.contextPath }/assets/img/logo.png">
             </a>
         </div>
@@ -64,29 +65,29 @@
             <form method="post" name="f" class="login_form" action="${pageContext.request.contextPath }/user/login">
                 
                 <div class="id_area">
-                    <input type="text" class="user_id" id="user_id" name="user_id" placeholder="¾ÆÀÌµğ¸¦ ÀÔ·ÂÇÏ¼¼¿ä" />
+                    <input type="text" class="user_id" id="user_id" name="user_id" placeholder="ì•„ì´ë””ë¥¼ ì…ë ¥í•˜ì„¸ìš”" />
                 </div>
 
                 <div class="pw_area">
-                    <input type="password" class="user_pw" id="user_pw" name="user_pw" placeholder="ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä" />
+                    <input type="password" class="user_pw" id="user_pw" name="user_pw" placeholder="ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš”" />
                 </div>
 
                 <div class="login">
-                    <input type="button" alt="·Î±×ÀÎ" value="·Î±×ÀÎ" class="login_btn" />
+                    <input type="button" alt="ë¡œê·¸ì¸" value="ë¡œê·¸ì¸" class="login_btn" />
                 </div>
 			</form>
 			
             <div class="register_area">
             	<span>
-                	<a class="register" href="${pageContext.request.contextPath }/user/registerAgree">È¸¿ø°¡ÀÔ</a>
+                	<a class="register" href="${pageContext.request.contextPath }/user/registerAgree">íšŒì›ê°€ì…</a>
                	</span>
                 <span>
-                    <a class="find_pw" href="${pageContext.request.contextPath }/user/find_pw"> ºñ¹Ğ¹øÈ£ Ã£±â</a>
+                    <a class="find_pw" href="${pageContext.request.contextPath }/user/find_pw"> ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°</a>
                 </span>
             </div>
         </div>
 
-        <!-- Ä«ÇÇ¶óÀÌÆ® -->
+        <!-- ì¹´í”¼ë¼ì´íŠ¸ -->
         <div id="copyright">
             <p class="copyright">&copy; 2021 Portfolio Web Site </p>
         </div>
