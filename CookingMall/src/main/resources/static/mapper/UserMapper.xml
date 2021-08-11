@@ -24,7 +24,7 @@
 	</resultMap>
 
 	<!-- 유저 회원가입 -->
-	<insert id="insertUser" parameterType="com.project.sellerre.user.User">
+	<insert id="insertUser" parameterType="com.example.Cookingmall.cook_user.User">
 		INSERT INTO sellerre_user VALUES (
 			seq_sellerre_user.nextval,
 			#{user_id},
@@ -57,7 +57,7 @@
 	</select>
 	
 <!-- 유저 정보 수정 -->
-	<update id="updateUser" parameterType="com.project.sellerre.user.User">
+	<update id="updateUser" parameterType="com.example.Cookingmall.cook_user.User">
 		UPDATE	cook_user
 		
 		SET		user_num = #{user_num},
