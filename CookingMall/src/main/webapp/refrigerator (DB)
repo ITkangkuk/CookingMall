@@ -1,0 +1,58 @@
+
+-----------------------------------------------------------혹시나 refrigerator-------------------------------------------------------------------
+
+//DB
+제품 번호, 유저 아이디, 재료들 ,레시피 재료
+
+create table refrigerator(
+re_num number primary key,
+b varchar2(20)
+);
+create sequence seq_refrigerator;
+
+select * from refrigerator;
+drop table refrigerator;
+
+insert into refrigerator(re_num,b) values('1','당근');
+insert into refrigerator(re_num,b) values('2','카레가루');
+insert into refrigerator(re_num,b) values('3','감자');
+insert into refrigerator(re_num,b) values('4','양파');
+insert into refrigerator(re_num,b) values('5','돼지고기');
+
+create table ca(
+ca number primary key,
+b varchar2(20)
+);
+select * from ca;
+insert into ca(ca,b) values('1','당근');
+insert into ca(ca,b) values('2','감자');
+insert into ca(ca,b) values('3','양파');
+insert into ca(ca,b) values('4','브로콜리');
+insert into ca(ca,b) values('5','햄');
+insert into ca(ca,b) values('6','멸치');
+
+select * from refrigerator where b in (select b from ca);
+select * from refrigerator where b in (select c from ca);
+
+alter table ca add c varchar(20);
+
+update ca set c='당근' where ca=1;
+update ca set c='오이' where ca=2;
+update ca set c='김치' where ca=3;
+update ca set c='헴' where ca=4;
+update ca set c='면사리' where ca=5;
+
+select * from ca;
+
+select count(c) from ca;
+
+
+
+####내 냉장고 .jsp
+
+<span class="re_name">내가 가진 식자재 리스트</span>
+<div class="refrigerator">
+	<c:forEach var="re" item="${list}" status="">
+		{n.re_name}
+	</c:forEach>
+</div>

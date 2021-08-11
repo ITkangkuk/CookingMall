@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.cooking_mall.Recipe_ListMapper">
+
+	<resultMap type="com.example.demo.cooking_mall.Recipe_List" id="Recipe_List">
+		<result property="rl_num" column="rl_num"/>
+		<result property="rl_product_num" column="rl_product_num"/>
+		<result property="rl_title" column="rl_title"/>
+	</resultMap>
+
+<!-- 레시피 등록 -->
+	<insert id="insertRecipes" parameterType="com.example.demo.cooking_mall.Recipe_List.Recipes">
+		INSERT INTO recipe_list
+		VALUES(
+			seq_cook_recipe_list.nextval,
+			#{rl_title},
+			#{rl_product_num},
+			sysdate,
+			0
+		)
+	</insert>
+	
+	<!-- 레시피 전체 출력 -->
+	<select id="selectAllRecipes" resultMap="recipe_list">
+		SELECT	*
+		FROM	recipe_list
+		ORDER BY rl_product_num references cook_Product(p_num)
+	</select>
+
+	<!-- notice_num으로 출력 -->
+	<select id="selectRecipes" parameterType="int" resultMap="recipe_list">
+		SELECT	*
+		FROM	recipe_list
+		WHERE	rl_product_num = #{rl_product_num}
+	</select>
+
+	<!-- 레시피 수정 -->
+	<update id="updateRecipes" parameterType="com.example.demo.cooking_mall.Recipe_List">
+		UPDATE	recipe_list
+		SET		rl_title = #{rl_title},
+				
+		WHERE	rl_product_num = #{rl_product_num}
+	</update>
+	
+	<!-- 조회수 증가 -->
+	<update id="RecipesViews" parameterType="int">
+		UPDATE	recipe_list
+		SET		recipe_list_Views = recipe_list_Views+1
+		WHERE	rl_product_num = #{rl_product_num}
+	</update>
+	
+	<!-- 삭제 -->
+	<delete id="deleteRecipes" parameterType="int">
+		DELETE
+		FROM	recipe_list
+		WHERE	rl_product_num = #{rl_product_num}
+	</delete>
+
+</mapper>
