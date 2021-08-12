@@ -45,7 +45,7 @@
         <br /><br />
         
         <!--회원가입폼 시작-->
-        <form method="post" class="form-horizontal" action="${pageContext.request.contextPath }/user/register">
+        <form method="post" class="form-horizontal" action="${pageContext.request.contextPath }/user/signup">
             <!-- 아이디 -->
             <div class="form-group">
                 <label for='userid' class="id_form col-md-6"> * 아이디 </label>

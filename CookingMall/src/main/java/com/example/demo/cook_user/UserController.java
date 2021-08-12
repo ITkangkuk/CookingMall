@@ -24,11 +24,11 @@ public class UserController {
 	@Autowired
 	private UserService user_Service;
 
-	// index濡� �씠�룞
+	// index嚥∽옙 占쎌뵠占쎈짗
 	@RequestMapping(value = "/index")
 	public ModelAndView index() {
 
-		System.out.println("泥섏쓬 �떆�옉 index text");
+		System.out.println("筌ｌ꼷�벉 占쎈뻻占쎌삂 index text");
 		ModelAndView mav = new ModelAndView("/index");
 
 //		ArrayList<Product> list = (ArrayList<Product>) product_Service.selectProductAll();
@@ -40,19 +40,19 @@ public class UserController {
 //		String path = "";
 //
 //		try {
-//			// 泥� 硫붿씤�럹�씠�젣 �긽�뭹 4媛쒕쭔 媛��졇�삩�떎
+//			// 筌ｏ옙 筌롫뗄�뵥占쎈읂占쎌뵠占쎌젫 占쎄맒占쎈�� 4揶쏆뮆彛� 揶쏉옙占쎌죬占쎌궔占쎈뼄
 //			System.out.println("list.size : " + list.size());
 //			for (int i = 0; i < 4; i++) {
-//				System.out.println("諛섎났臾� i : " + i);
-//				// �쟾泥� �긽�뭹�닔媛� 4媛� 誘몃쭔�씪 �븣
+//				System.out.println("獄쏆꼶�궗�눧占� i : " + i);
+//				// 占쎌읈筌ｏ옙 占쎄맒占쎈�뱄옙�땾揶쏉옙 4揶쏉옙 沃섎챶彛뷂옙�뵬 占쎈르
 //				if (list.size() < 4) {
-//					// 留덉�留� �긽�뭹�쑝濡� 梨꾩슫�떎
+//					// 筌띾뜆占쏙쭕占� 占쎄맒占쎈�뱄옙�몵嚥∽옙 筌�袁⑹뒲占쎈뼄
 //					if (i < list.size()) {
 //						p = list.get(i);
-//						System.out.println("諛섎났臾� if list.get(i) : " + i + " " + p);
+//						System.out.println("獄쏆꼶�궗�눧占� if list.get(i) : " + i + " " + p);
 //					} else {
 //						p = list.get(list.size() - 1);
-//						System.out.println("諛섎났臾� else list.get(i) : " + i + " " + p);
+//						System.out.println("獄쏆꼶�궗�눧占� else list.get(i) : " + i + " " + p);
 //					}
 //					path = basePath + p.getProduct_num() + "\\";
 //					File imgDir = new File(path);
@@ -62,7 +62,7 @@ public class UserController {
 //						fileList.add(files[0]);
 //					}
 //					indexList.add(p);
-//					System.out.println("if臾� p = " + p);
+//					System.out.println("if�눧占� p = " + p);
 //				} else {
 //					p = list.get(i);
 //					path = basePath + p.getProduct_num() + "\\";
@@ -74,7 +74,7 @@ public class UserController {
 //					}
 //					System.out.println("p = " + p);
 //					indexList.add(p);
-//					System.out.println("indexList�뿉 add �꽦怨�" + i + "踰덉��");
+//					System.out.println("indexList占쎈퓠 add 占쎄쉐�⑨옙" + i + "甕곕뜆占쏙옙");
 //				}
 //			}
 //			System.out.println(indexList);
@@ -88,34 +88,34 @@ public class UserController {
 		return mav;
 	}
 
-	// loginForm�쑝濡� �씠�룞
+	// loginForm占쎌몵嚥∽옙 占쎌뵠占쎈짗
 	@GetMapping(value = "/user/login")
 	public void login() {
 
 	}
 
-	// registerAgree濡� �씠�룞
-	@RequestMapping(value = "/user/registerAgree")
-	public void registerAgree() {
+	// registerAgree嚥∽옙 占쎌뵠占쎈짗
+	@RequestMapping(value = "/user/signup_agree")
+	public void signup_agree() {
 
 	}
 
-	// registerForm濡� �씠�룞
-	@RequestMapping(value = "/user/registerForm")
-	public void registerForm() {
+	// registerForm嚥∽옙 占쎌뵠占쎈짗
+	@RequestMapping(value = "/user/signupform")
+	public void signupform() {
 
 	}
 
-	// find_pwdForm�쑝濡� �씠�룞
+	// find_pwdForm占쎌몵嚥∽옙 占쎌뵠占쎈짗
 	@RequestMapping(value = "/user/find_pwd")
 	public void findPwForm() {
 
 	}
 
-	// ==================== �뼯 Page Control �뼯 ====================
+	// ==================== 占쎈섞 Page Control 占쎈섞 ====================
 
-	// �쉶�썝媛��엯 Service �떎�뻾 �썑 濡쒓렇�씤 �럹�씠吏�濡� �씠�룞
-	@RequestMapping(value = "/user/register")
+	// 占쎌돳占쎌뜚揶쏉옙占쎌뿯 Service 占쎈뼄占쎈뻬 占쎌뜎 嚥≪뮄�젃占쎌뵥 占쎈읂占쎌뵠筌욑옙嚥∽옙 占쎌뵠占쎈짗
+	@RequestMapping(value = "/user/signup")
 	public String join(User u) {
 
 		user_Service.addUser(u);
@@ -123,9 +123,9 @@ public class UserController {
 		return "redirect:/user/login";
 	}
 
-	// 濡쒓렇�씤 �썑 硫붿씤�럹�씠吏�濡� �씠�룞
+	// 嚥≪뮄�젃占쎌뵥 占쎌뜎 筌롫뗄�뵥占쎈읂占쎌뵠筌욑옙嚥∽옙 占쎌뵠占쎈짗
 	@RequestMapping(value = "/user/login")
-	public String loginOk(HttpServletRequest request, @RequestParam(value = "user_id") String user_id) {
+	public String loginOk(HttpServletRequest request, @RequestParam(value = "id") String user_id) {
 
 		User u = user_Service.checkUserId(user_id);
 		HttpSession session = request.getSession();
@@ -142,7 +142,7 @@ public class UserController {
 		return null;
 	}
 
-	// �쉶�썝寃��깋�븯�뿬 �닔�젙李쎌쓣 �쓣�슦�뒗 硫붿냼�뱶
+	// 占쎌돳占쎌뜚野껓옙占쎄퉳占쎈릭占쎈연 占쎈땾占쎌젟筌≪럩�뱽 占쎌뱽占쎌뒭占쎈뮉 筌롫뗄�꺖占쎈굡
 	@RequestMapping(value = "/user/userEdit")
 	public ModelAndView userEdit(HttpServletRequest request) {
 
@@ -156,7 +156,7 @@ public class UserController {
 		return mav;
 	}
 
-	// �쉶�썝�젙蹂� �닔�젙�쓣 �떎�뻾�븯�뒗 硫붿냼�뱶
+	// 占쎌돳占쎌뜚占쎌젟癰귨옙 占쎈땾占쎌젟占쎌뱽 占쎈뼄占쎈뻬占쎈릭占쎈뮉 筌롫뗄�꺖占쎈굡
 	@RequestMapping(value = "user/edit")
 	public String edit(HttpServletRequest request, RedirectAttributes redirect, User u,
 						@RequestParam(value = "user_id") String user_id) {
@@ -171,7 +171,7 @@ public class UserController {
 		return "redirect:/user/userProfile";
 	}
 
-	// 濡쒓렇�븘�썐 �썑 硫붿씤�럹�씠吏�濡� �씠�룞
+	// 嚥≪뮄�젃占쎈툡占쎌뜍 占쎌뜎 筌롫뗄�뵥占쎈읂占쎌뵠筌욑옙嚥∽옙 占쎌뵠占쎈짗
 	@RequestMapping(value = "/user/logout")
 	public String logout(HttpServletRequest request) {
 
@@ -182,7 +182,7 @@ public class UserController {
 		return "redirect:/index";
 	}
 
-	// �쉶�썝 �깉�눜瑜� �떎�뻾�븯�뒗 硫붿냼�뱶
+	// 占쎌돳占쎌뜚 占쎄퉱占쎈닚�몴占� 占쎈뼄占쎈뻬占쎈릭占쎈뮉 筌롫뗄�꺖占쎈굡
 	@RequestMapping(value = "/user/userDelete")
 	public String userDelete(HttpServletRequest request) {
 
@@ -196,7 +196,7 @@ public class UserController {
 		return "redirect:/index";
 	}
 
-	// �븘�씠�뵒 以묐났 寃��궗
+	// 占쎈툡占쎌뵠占쎈탵 餓λ쵎�궗 野껓옙占쎄텢
 	@RequestMapping(value = "/user/IdCheck")
 	@ResponseBody
 	public String checkId(@RequestParam(value = "user_id") String user_id) {
@@ -204,16 +204,16 @@ public class UserController {
 		int id_result = user_Service.idCheck(user_id);
 		
 		if (id_result != 0) {
-			return "fail"; // 以묐났�맆 �븣
+			return "fail"; // 餓λ쵎�궗占쎈쭍 占쎈르
 		} else {
-			return "success"; // 以묐났�릺吏� �븡�쓣 �븣
+			return "success"; // 餓λ쵎�궗占쎈┷筌욑옙 占쎈륫占쎌뱽 占쎈르
 		}
 	}
 
-	// �땳�꽕�엫 以묐났 寃��궗
+	// 占쎈빏占쎄퐬占쎌뿫 餓λ쵎�궗 野껓옙占쎄텢
 	@RequestMapping(value = "/user/nicknameCheck")
 	@ResponseBody
-	public String checkName(@RequestParam(value = "user_nickname") String user_nickname) {
+	public String checkName(@RequestParam(value = "nickname") String user_nickname) {
 		
 		int name_result = user_Service.nicknameCheck(user_nickname);
 		
@@ -224,10 +224,10 @@ public class UserController {
 		}
 	}
 
-	// �씠硫붿씪 以묐났 寃��궗
+	// 占쎌뵠筌롫뗄�뵬 餓λ쵎�궗 野껓옙占쎄텢
 	@RequestMapping(value = "/user/emailCheck")
 	@ResponseBody
-	public String checkEmail(@RequestParam(value = "user_email") String user_email) {
+	public String checkEmail(@RequestParam(value = "email") String user_email) {
 		
 		int name_result = user_Service.emailCheck(user_email);
 		
@@ -238,35 +238,35 @@ public class UserController {
 		}
 	}
 
-	// �엫�떆 鍮꾨�踰덊샇李얘린
-	@RequestMapping(value = "/user/pwCheck")
-	public ModelAndView findPw(@RequestParam(value = "user_email") String user_email) {
+	// 占쎌뿫占쎈뻻 �뜮袁⑨옙甕곕뜇�깈筌≪뼐由�
+	@RequestMapping(value = "/user/pwdCheck")
+	public ModelAndView findPwd(@RequestParam(value = "email") String user_email) {
 		
-		ModelAndView mav = new ModelAndView("/user/pwCheck");
+		ModelAndView mav = new ModelAndView("/user/pwdCheck");
 		String result = "";
 		User u = user_Service.selectUserEmail(user_email);
 
 		if (u == null) {
-			result = "�쑀�슚�븯吏��븡�� �씠硫붿씪";
+			result = "占쎌�占쎌뒞占쎈릭筌욑옙占쎈륫占쏙옙 占쎌뵠筌롫뗄�뵬";
 		} else {
-			result = u.getUser_nickname() + " �떂�쓽 鍮꾨�踰덊샇�뒗 " + u.getUser_pwd() + " �엯�땲�떎.";
+			result = u.getUser_nickname() + " 占쎈뻷占쎌벥 �뜮袁⑨옙甕곕뜇�깈占쎈뮉 " + u.getUser_pwd() + " 占쎌뿯占쎈빍占쎈뼄.";
 		}
 		mav.addObject("result", result);
 
 		return mav;
 	}
 	
-	// 濡쒓렇�씤 �떆 �븘�씠�뵒 & 鍮꾨�踰덊샇 泥댄겕
+	// 嚥≪뮄�젃占쎌뵥 占쎈뻻 占쎈툡占쎌뵠占쎈탵 & �뜮袁⑨옙甕곕뜇�깈 筌ｋ똾寃�
 	@RequestMapping(value = "/user/userLoginCheck")
-	public ModelAndView loginCheck(@RequestParam(value = "user_id") String user_id, @RequestParam(value = "user_pw") String user_pw) {
+	public ModelAndView loginCheck(@RequestParam(value = "user_id") String user_id, @RequestParam(value = "user_pwd") String user_pwd) {
 		
 		ModelAndView mav = new ModelAndView("user/userLoginCheckJSON");
 		User u = user_Service.checkUserId(user_id);
 		String pwd2 = u.getUser_pwd();
 		String result = "";
 		
-		if (!user_pw.equals(pwd2)) {
-			result = "鍮꾨�踰덊샇媛� 留욎� �븡�뒿�땲�떎";
+		if (!user_pwd.equals(pwd2)) {
+			result = "鍮꾨�踰덊샇媛� 留욎� �븡�뒿�땲�떎.";
 			mav.addObject("result", result);
 		} else {
 			mav.addObject("result", result);

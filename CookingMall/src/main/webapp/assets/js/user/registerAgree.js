@@ -28,7 +28,7 @@ $(document).ready(function() {
     	 var c = $("input[class=Service_Check]:checked").length;
     	 console.log(c)
     	 if(c>2){
-    		location.href="/user/registerForm";
+    		location.href="/user/signupform";
 		}else{
 			alert("필수항목이 체크되지 않았습니다");
 		}

@@ -29,10 +29,10 @@ $(document).ready(function(){
 			}); // ajax 종료
 		}); 
 
-	$('#user_pw_re').on("propertychange change keyup paste input", function(){
+	$('#user_pwd_re').on("propertychange change keyup paste input", function(){
 	
-			var pwd1=$("#user_pw").val(); 
-			var pwd2=$("#user_pw_re").val(); 
+			var pwd1=$("#user_pwd").val(); 
+			var pwd2=$("#user_pwd_re").val(); 
 			//console.log("pw1"+pwd1)
 			
  			if(pwd1 != "" || pwd2 != ""){
@@ -54,10 +54,10 @@ $(document).ready(function(){
 		}
 	});
 	
-	$('#user_pw').on("propertychange change keyup paste input", function(){
+	$('#user_pwd').on("propertychange change keyup paste input", function(){
 	
-		var pwd1=$("#user_pw").val(); 
-		var pwd2=$("#user_pw_re").val(); 
+		var pwd1=$("#user_pwd").val(); 
+		var pwd2=$("#user_pwd_re").val(); 
 		//console.log("pw1"+pwd1)
 		
 			if(pwd1 != "" || pwd2 != ""){

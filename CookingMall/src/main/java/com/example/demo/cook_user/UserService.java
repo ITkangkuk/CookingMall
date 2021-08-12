@@ -13,8 +13,8 @@ public class UserService {
 	@Autowired
 	private UserMapper mapper;
 
-	public void addUser(User user) {
-		mapper.insertUser(user);
+	public void addUser(User u) {
+		mapper.insertUser(u);
 	}
 
 	public User checkUserId(String user_id) {

@@ -8,23 +8,23 @@
 
 <resultMap type="com.example.Cookingmall.cook_user.User" id="User">
 
-    <result property="user_num" column="user_num"/>
-		<result property="user_id" column="user_id"/>
-		<result property="user_num" column="user_num"/>
-		<result property="user_pwd" column="user_pwd"/>
-		<result property="user_name" column="user_name"/>
-		<result property="user_email" column="user_email"/>
-		<result property="user_tel" column="user_tel"/>
-		<result property="user_nickname" column="user_nickname"/>
-		<result property="user_postcode" column="user_postcode"/>
-		<result property="user_addr1" column="user_addr1"/>
-		<result property="user_addr2" column="user_addr2"/>
-		<result property="user_birthday" column="user_birthday"/>
-		<result property="user_type" column="user_type"/>
+    <result property="user_num" column="num"/>
+		<result property="user_id" column="id"/>
+		<result property="user_num" column="num"/>
+		<result property="user_pwd" column="pwd"/>
+		<result property="user_name" column="name"/>
+		<result property="user_email" column="email"/>
+		<result property="user_tel" column="tel"/>
+		<result property="user_nickname" column="nickname"/>
+		<result property="user_postcode" column="postcode"/>
+		<result property="user_addr1" column="addr1"/>
+		<result property="user_addr2" column="addr2"/>
+		<result property="user_birthday" column="birthday"/>
+		<result property="user_type" column="type"/>
 	</resultMap>
 
 	<!-- 유저 회원가입 -->
-	<insert id="insertUser" parameterType="com.project.sellerre.user.User">
+	<insert id="insertUser" parameterType="com.example.Cookingmall.cook_user.User">
 		INSERT INTO sellerre_user VALUES (
 			seq_sellerre_user.nextval,
 			#{user_id},
@@ -57,7 +57,7 @@
 	</select>
 	
 <!-- 유저 정보 수정 -->
-	<update id="updateUser" parameterType="com.project.sellerre.user.User">
+	<update id="updateUser" parameterType="com.example.Cookingmall.cook_user.User">
 		UPDATE	cook_user
 		
 		SET		user_num = #{user_num},
